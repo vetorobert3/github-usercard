@@ -62,8 +62,9 @@ const followersArray = [];
 function createCard(data) {
 
   //creating elements
-  const newImg = document.createElement('img');
   const newCard = document.createElement('div');
+  const newImg = document.createElement('img');
+  const newCardInfo = document.createElement('div');
   const newName = document.createElement('h3');
   const newUserName = document.createElement('p');
   const newLocation = document.createElement('p');
@@ -73,7 +74,8 @@ function createCard(data) {
   const newBio = document.createElement('p');
 
   //adding classes
-  newCard.classList.add('card-info');
+  newCard.classList.add('card');
+  newCardInfo.classList.add('card-info');
   newName.classList.add('name');
   newUserName.classList.add('username');
 
@@ -87,9 +89,21 @@ function createCard(data) {
   newFollowing.textContent = data.following;
   newBio.textContent = data.bio;
 
-  
+  //add to parent
+  newCard.appendChild(newImg);
+  newCard.appendChild(newCardInfo);
+  newCard.appendChild(newName);
+  newCard.appendChild(newUserName);
+  newCard.appendChild(newLocation);
+  newCard.appendChild(newProfile);
+  newCard.appendChild(newFollowers);
+  newCard.appendChild(newFollowing);
+  newCard.appendChild(newBio);
 
+  return newCard;
 }
+
+console.log(newCard())
 
 /* List of LS Instructors Github username's:
   tetondan
